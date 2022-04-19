@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "terraform-aws-module/vpc/aws"
+  source = "terraform-aws-modules/vpc/aws"
   name = var.VPC_NAME
   cidr = var.VpcCIDR
   azs = [var.zone1, var.zone2, var.zone3]
@@ -10,6 +10,7 @@ module "vpc" {
   single_nat_gateway = true
   enable_dns_hostnames = true
   enable_dns_support  = true
+
 
   tags = {
     Terraform = "true"
